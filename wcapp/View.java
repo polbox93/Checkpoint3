@@ -16,4 +16,8 @@ public class View {
     public void printStringInOneLine (char c, Float flo) {
         System.out.printf("[%c -> %.2f]", c, flo);
     }
+
+    public void printSpace(){
+        System.out.println("\n");
+    }
 }

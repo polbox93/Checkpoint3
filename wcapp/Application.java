@@ -14,10 +14,14 @@ public class Application {
 
         Application app = new Application();
         View view = new View();
+
         app.start(view, args);
 
         long endTime = System.currentTimeMillis();
-        long time = ((endTime - startTime)/1000);
+
+        Float time = ((endTime - startTime)/1000.0f);
+
+        view.printString("Procede time: " + time + " sec.");
     }
 
     public void start(View view, String... args) {
@@ -48,6 +52,8 @@ public class Application {
         view.printString("a:e count ratio: " + charSA.a_eRatio());
 
         charSA.lettersInText(view);
+        view.printSpace();
+
 
 
 

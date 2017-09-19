@@ -62,6 +62,7 @@ public class StatisticalAnalysis {
         return result;
     }
 
+
     public HashSet<String> mostUsedWords(){
         HashSet <String> result = new HashSet<>();
 
@@ -70,11 +71,13 @@ public class StatisticalAnalysis {
         return result;
     }
 
+
     public static Float round(float d, int decimalPlace) {
         BigDecimal bd = new BigDecimal(Float.toString(d));
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
         return bd.floatValue();
     }
+
 
     public Float vovelsPercentage(){
         Float quantity = (this.countOf("a", "o", "e", "i", "u") /
@@ -83,17 +86,19 @@ public class StatisticalAnalysis {
         return this.round(quantity, 2);
     }
 
+
     public Float a_eRatio(){
-        Float ratio = this.countOf("a") / (float) this.countOf("e");
+        Float ratio = this.countOf("a") / (float) this.countOf("e") * 100;
 
         return this.round(ratio, 2);
     }
+
 
     public void lettersInText(View view){
         char c = 'a';
         while (c <= 'z'){
             Float percentInText = this.countOf(String.valueOf(c)) /
-                                    (float) this.size();
+                                    (float) this.size() * 100;
             view.printStringInOneLine(c, percentInText);
             c++;
         }
